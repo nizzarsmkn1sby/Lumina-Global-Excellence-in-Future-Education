@@ -33,29 +33,68 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
+// Mobile Menu Logic
+const menuToggle = document.getElementById("menuToggle");
+const mobileMenu = document.getElementById("mobileMenu");
+const body = document.body;
+
+if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        mobileMenu.classList.toggle("active");
+        
+        // Change icon based on state
+        const icon = menuToggle.querySelector("i");
+        if (mobileMenu.classList.contains("active")) {
+            icon.setAttribute("data-lucide", "x");
+        } else {
+            icon.setAttribute("data-lucide", "menu");
+        }
+        lucide.createIcons();
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", (e) => {
+        if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+            mobileMenu.classList.remove("active");
+            menuToggle.querySelector("i").setAttribute("data-lucide", "menu");
+            lucide.createIcons();
+        }
+    });
+
+    // Close menu when clicking a link
+    mobileMenu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+            mobileMenu.classList.remove("active");
+            menuToggle.querySelector("i").setAttribute("data-lucide", "menu");
+            lucide.createIcons();
+        });
+    });
+}
+
 // Add dynamic behavior to stats (counter increment effect)
 const counterElements = document.querySelectorAll(".stat-number");
 
 const animateCounters = () => {
   counterElements.forEach((el) => {
-    const targetStr = el.innerText.replace(/[^0-9]/g, "");
-    const target = parseInt(targetStr);
-    const suffix = el.innerText.replace(/[0-9]/g, "");
+    const targetText = el.innerText.trim();
+    const targetNum = parseInt(targetText.replace(/[^0-9]/g, ""));
+    const suffix = targetText.replace(/[0-9]/g, "");
+    
     let count = 0;
-    const duration = 2000; // 2 seconds
-    const increment = target / (duration / 16); // 16ms is roughly 1 frame
+    const duration = 2000;
+    const increment = targetNum / (duration / 16);
 
     const updateCount = () => {
-      if (count < target) {
+      if (count < targetNum) {
         count += increment;
         el.innerText = Math.ceil(count) + suffix;
-        setTimeout(updateCount, 16);
+        requestAnimationFrame(updateCount);
       } else {
-        el.innerText = target + suffix;
+        el.innerText = targetNum + suffix;
       }
     };
 
-    // Trigger when section is in view
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
@@ -63,14 +102,14 @@ const animateCounters = () => {
           observer.unobserve(el);
         }
       },
-      { threshold: 0.5 },
+      { threshold: 0.5 }
     );
 
     observer.observe(el);
   });
 };
 
-// Only run counter animation if browser supports IntersectionObserver
+// Start counters
 if ("IntersectionObserver" in window) {
-  animateCounters();
+    animateCounters();
 }

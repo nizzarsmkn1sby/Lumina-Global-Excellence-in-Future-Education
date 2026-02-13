@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zenith Academy | Unlock Your Peak Potential</title>
-    <meta name="description" content="Zenith Academy is a modern learning platform designed for the next generation of leaders. Elite mentorship and cutting-edge courses to help you reach your peak.">
+    <title>Zenith Academy | Raih Potensi Maksimal Anda</title>
+    <meta name="description" content="Zenith Academy adalah platform pembelajaran modern yang dirancang untuk generasi pemimpin masa depan. Mentorship elit dan kursus mutakhir untuk membantu Anda mencapai puncak karir.">
     <!-- Favicon -->
     <link
       rel="icon"
@@ -32,17 +32,32 @@
           </a>
 
           <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#courses">Programs</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#testimonials">Community</a></li>
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#courses">Program</a></li>
+            <li><a href="#features">Keunggulan</a></li>
+            <li><a href="#testimonials">Komunitas</a></li>
           </ul>
 
           <div class="nav-actions">
-            <a href="#" class="btn btn-outline" style="border:none;">Sign In</a>
-            <a href="#" class="btn btn-primary">Join Now</a>
+            <a href="#" class="btn btn-outline hide-mobile">Masuk</a>
+            <a href="#" class="btn btn-primary">Daftar Sekarang</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Buka Menu">
+                <i data-lucide="menu"></i>
+            </button>
           </div>
         </nav>
+      </div>
+
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-links">
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#courses">Program</a></li>
+            <li><a href="#features">Keunggulan</a></li>
+            <li><a href="#testimonials">Komunitas</a></li>
+            <li><hr style="border: 0; border-top: 1px solid var(--border); margin: 1rem 0;"></li>
+            <li><a href="#" class="btn btn-outline" style="width: 100%;">Masuk</a></li>
+        </ul>
       </div>
     </header>
 
@@ -55,22 +70,22 @@
             data-aos="fade-right"
             data-aos-duration="1000"
           >
-            <h1>Reach Your <span>Peak Potential</span></h1>
-            <p>The modern learning platform for ambitious minds. Master high-demand skills with elite mentors and a community of over 50,000+ students worldwide.</p>
+            <h1>Capai Potensi <span>Terbaik Anda</span></h1>
+            <p>Platform pembelajaran modern untuk pikiran yang berambisi. Kuasai keahlian yang paling dibutuhkan bersama mentor elit dan komunitas lebih dari 50.000+ pelajar di seluruh dunia.</p>
             <div class="nav-actions" style="margin-top: 2rem">
               <a
                 href="#courses"
                 class="btn btn-primary"
                 style="padding: 1.2rem 2.5rem; font-size: 1.1rem"
               >
-                Get Started <i data-lucide="arrow-right"></i>
+                Mulai Belajar <i data-lucide="arrow-right"></i>
               </a>
               <a
                 href="#"
                 class="btn btn-outline"
                 style="padding: 1.2rem 2.5rem; font-size: 1.1rem; border:none;"
               >
-                Watch Trailer <i data-lucide="play" style="fill: currentColor;"></i>
+                Tonton Trailer <i data-lucide="play" style="fill: currentColor;"></i>
               </a>
             </div>
           </div>
@@ -78,8 +93,8 @@
           <div class="hero-image" data-aos="fade-left" data-aos-duration="1200">
             <div class="image-container">
               <img
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200"
-                alt="Students Learning Together"
+                src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200"
+                alt="Pelajar Sedang Berdiskusi"
                 class="main-image"
               />
               <div class="floating-card top" data-aos="fade-up" data-aos-delay="400">
@@ -87,8 +102,8 @@
                   <i data-lucide="star" style="width: 20px;"></i>
                 </div>
                 <div>
-                  <div style="font-weight: 800; font-size: 1.1rem; color: var(--secondary);">4.9/5 Rating</div>
-                  <div style="font-size: 0.8rem; color: var(--text-secondary);">Trust from 50k+ students</div>
+                  <div style="font-weight: 800; font-size: 1.1rem; color: var(--secondary);">Rating 4.9/5</div>
+                  <div style="font-size: 0.8rem; color: var(--text-secondary);">Dipercaya 50rb+ siswa</div>
                 </div>
               </div>
               <div class="floating-card bottom" data-aos="fade-up" data-aos-delay="600">
@@ -96,8 +111,8 @@
                   <i data-lucide="award" style="width: 20px;"></i>
                 </div>
                 <div>
-                  <div style="font-weight: 800; font-size: 1.1rem; color: var(--secondary);">Elite Mentors</div>
-                  <div style="font-size: 0.8rem; color: var(--text-secondary);">Industry Experts</div>
+                  <div style="font-weight: 800; font-size: 1.1rem; color: var(--secondary);">Mentor Elit</div>
+                  <div style="font-size: 0.8rem; color: var(--text-secondary);">Para Ahli Industri Terbaik</div>
                 </div>
               </div>
             </div>
@@ -107,11 +122,11 @@
     </section>
 
     <!-- Features Section -->
-    <section class="features">
+    <section class="features" id="features">
       <div class="container">
         <div class="section-header" data-aos="fade-up">
-          <span>The Zenith Edge</span>
-          <h2>Beyond Traditional Learning</h2>
+          <span>Keunggulan Zenith</span>
+          <h2>Melampaui Pembelajaran Tradisional</h2>
         </div>
 
         <div class="features-grid">
@@ -119,9 +134,9 @@
             <div class="feature-icon">
               <i data-lucide="zap"></i>
             </div>
-            <h3>Fast-Track Skills</h3>
+            <h3>Keahlian Cepat</h3>
             <p>
-              Master real-world skills in weeks, not years, with our intensive industry-aligned curriculum.
+              Kuasai keahlian dunia nyata dalam hitungan minggu, bukan tahun, dengan kurikulum intensif kami.
             </p>
           </div>
 
@@ -129,9 +144,9 @@
             <div class="feature-icon">
               <i data-lucide="users-2"></i>
             </div>
-            <h3>Global Network</h3>
+            <h3>Jaringan Global</h3>
             <p>
-              Connect with ambitious peers and industry mentors from around the world in our private community.
+              Terhubung dengan rekan-rekan ambisius dan mentor industri dari seluruh dunia dalam komunitas privat kami.
             </p>
           </div>
 
@@ -139,9 +154,9 @@
             <div class="feature-icon">
               <i data-lucide="target"></i>
             </div>
-            <h3>Outcome Focused</h3>
+            <h3>Berorientasi Hasil</h3>
             <p>
-              We don't just teach. We help you build a portfolio and land your dream role in top companies.
+              Kami tidak hanya mengajar. Kami membantu Anda membangun portofolio dan mendapatkan pekerjaan impian di perusahaan ternama.
             </p>
           </div>
         </div>
@@ -152,22 +167,22 @@
     <section class="courses" id="courses">
       <div class="container">
         <div class="section-header" data-aos="fade-up">
-          <span>Trending Programs</span>
-          <h2>Most Popular Courses</h2>
+          <span>Program Terpopuler</span>
+          <h2>Kursus Pilihan Terbaik</h2>
         </div>
 
         <div class="course-grid">
           <!-- Course 1 -->
           <div class="course-card" data-aos="fade-up" data-aos-delay="100">
             <div class="course-thumb">
-              <span class="course-category">Artificial Intelligence</span>
+              <span class="course-category">Kecerdasan Buatan</span>
               <img
                 src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800"
-                alt="AI Development"
+                alt="Pengembangan AI"
               />
             </div>
             <div class="course-info">
-              <h3>AI & Prompt Engineering</h3>
+              <h3>Ahli AI & Prompt Engineering</h3>
               <p
                 style="
                   color: var(--text-secondary);
@@ -175,12 +190,12 @@
                   font-size: 0.95rem;
                 "
               >
-                Master modern AI tools to accelerate your workflow.
+                Kuasai alat AI modern untuk mempercepat alur kerja dan produktivitas Anda.
               </p>
               <div class="course-meta">
-                <span><i data-lucide="clock" style="width: 16px; margin-right: 4px;"></i> 6 Weeks</span>
-                <span><i data-lucide="user" style="width: 16px; margin-right: 4px;"></i> 12.4k Students</span>
-                <span class="course-price">$149</span>
+                <span><i data-lucide="clock" style="width: 16px; margin-right: 4px;"></i> 6 Minggu</span>
+                <span><i data-lucide="user" style="width: 16px; margin-right: 4px;"></i> 12.4rb Siswa</span>
+                <span class="course-price">Rp 1.499k</span>
               </div>
             </div>
           </div>
@@ -188,14 +203,14 @@
           <!-- Course 2 -->
           <div class="course-card" data-aos="fade-up" data-aos-delay="200">
             <div class="course-thumb">
-              <span class="course-category">Product Design</span>
+              <span class="course-category">Desain Produk</span>
               <img
-                src="cht.png"
-                alt="UI/UX Design"
+                src="https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?q=80&w=800"
+                alt="Desain UI/UX"
               />
             </div>
             <div class="course-info">
-              <h3>Advanced UI/UX Masterclass</h3>
+              <h3>Masterclass UI/UX Lanjutan</h3>
               <p
                 style="
                   color: var(--text-secondary);
@@ -203,12 +218,12 @@
                   font-size: 0.95rem;
                 "
               >
-                Build stunning interfaces and deep user experiences.
+                Bangun antarmuka yang memukau dan pengalaman pengguna yang mendalam bagi jutaan orang.
               </p>
               <div class="course-meta">
-                <span><i data-lucide="clock" style="width: 16px; margin-right: 4px;"></i> 8 Weeks</span>
-                <span><i data-lucide="user" style="width: 16px; margin-right: 4px;"></i> 8.2k Students</span>
-                <span class="course-price">$199</span>
+                <span><i data-lucide="clock" style="width: 16px; margin-right: 4px;"></i> 8 Minggu</span>
+                <span><i data-lucide="user" style="width: 16px; margin-right: 4px;"></i> 8.2rb Siswa</span>
+                <span class="course-price">Rp 2.199k</span>
               </div>
             </div>
           </div>
@@ -216,14 +231,14 @@
           <!-- Course 3 -->
           <div class="course-card" data-aos="fade-up" data-aos-delay="300">
             <div class="course-thumb">
-              <span class="course-category">Marketing</span>
+              <span class="course-category">Pemasaran</span>
               <img
-                src="startegy.png"
-                alt="Content Strategy"
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800"
+                alt="Strategi Konten"
               />
             </div>
             <div class="course-info">
-              <h3>Digital Growth & Viral Strategy</h3>
+              <h3>Pertumbuhan Digital & Strategi Viral</h3>
               <p
                 style="
                   color: var(--text-secondary);
@@ -231,19 +246,19 @@
                   font-size: 0.95rem;
                 "
               >
-                Learn the secrets behind the world's fastest growing brands.
+                Pelajari rahasia di balik merek-merek yang tumbuh paling cepat di dunia saat ini.
               </p>
               <div class="course-meta">
-                <span><i data-lucide="clock" style="width: 16px; margin-right: 4px;"></i> 4 Weeks</span>
-                <span><i data-lucide="user" style="width: 16px; margin-right: 4px;"></i> 15k Students</span>
-                <span class="course-price">$129</span>
+                <span><i data-lucide="clock" style="width: 16px; margin-right: 4px;"></i> 4 Minggu</span>
+                <span><i data-lucide="user" style="width: 16px; margin-right: 4px;"></i> 15rb Siswa</span>
+                <span class="course-price">Rp 1.250k</span>
               </div>
             </div>
           </div>
         </div>
 
         <div style="text-align: center; margin-top: 4rem">
-          <a href="#" class="btn btn-outline">Explore All Programs</a>
+          <a href="#" class="btn btn-outline" style="border: 2px solid var(--border);">Jelajahi Semua Program</a>
         </div>
       </div>
     </section>
@@ -273,7 +288,7 @@
               98%
             </div>
             <div style="color: #94a3b8; margin-top: 0.75rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; font-size: 0.8rem;">
-              Job Placement
+              Penempatan Kerja
             </div>
           </div>
           <div data-aos="zoom-in" data-aos-delay="100">
@@ -288,7 +303,7 @@
               500+
             </div>
             <div style="color: #94a3b8; margin-top: 0.75rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; font-size: 0.8rem;">
-              Global Partners
+              Mitra Global
             </div>
           </div>
           <div data-aos="zoom-in" data-aos-delay="200">
@@ -300,10 +315,10 @@
                 color: var(--primary-light);
               "
             >
-              50k+
+              50rb+
             </div>
             <div style="color: #94a3b8; margin-top: 0.75rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; font-size: 0.8rem;">
-              Active Students
+              Siswa Aktif
             </div>
           </div>
           <div data-aos="zoom-in" data-aos-delay="300">
@@ -317,7 +332,7 @@
             >
               250+
             </div>
-            <div style="color: #94a3b8; margin-top: 0.75rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; font-size: 0.8rem;">Expert Mentors</div>
+            <div style="color: #94a3b8; margin-top: 0.75rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; font-size: 0.8rem;">Mentor Ahli</div>
           </div>
         </div>
       </div>
@@ -335,39 +350,39 @@
               <span style="margin-left: 10px;">ZENITH</span>
             </a>
             <p>
-              Empowering the next generation of digital leaders through elite education and community.
+              Memberdayakan generasi pemimpin digital berikutnya melalui pendidikan elit dan komunitas yang kuat.
             </p>
           </div>
           <div class="footer-links">
-            <h4>Academy</h4>
+            <h4>Akademi</h4>
             <ul>
-              <li><a href="#">All Courses</a></li>
-              <li><a href="#">Learning Path</a></li>
-              <li><a href="#">Career Services</a></li>
-              <li><a href="#">Scholarships</a></li>
+              <li><a href="#">Semua Kursus</a></li>
+              <li><a href="#">Jalur Pembelajaran</a></li>
+              <li><a href="#">Layanan Karir</a></li>
+              <li><a href="#">Beasiswa</a></li>
             </ul>
           </div>
           <div class="footer-links">
-            <h4>Community</h4>
+            <h4>Komunitas</h4>
             <ul>
-              <li><a href="#">Discord Server</a></li>
-              <li><a href="#">Student Showcase</a></li>
-              <li><a href="#">Events</a></li>
-              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Server Discord</a></li>
+              <li><a href="#">Showcase Siswa</a></li>
+              <li><a href="#">Acara</a></li>
+              <li><a href="#">Pusat Bantuan</a></li>
             </ul>
           </div>
           <div class="footer-links">
-            <h4>Support</h4>
+            <h4>Dukungan</h4>
             <ul>
-              <li><a href="#">hello@zenithacademy.edu</a></li>
-              <li><a href="#">Terms of Service</a></li>
-              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">halo@zenithacademy.id</a></li>
+              <li><a href="#">Ketentuan Layanan</a></li>
+              <li><a href="#">Kebijakan Privasi</a></li>
             </ul>
           </div>
         </div>
         <div class="footer-bottom">
           <p>
-            &copy; 2026 Zenith Academy. Designed for the Ambitious.
+            &copy; 2026 Zenith Academy. Dirancang untuk Mereka yang Berambisi.
           </p>
         </div>
       </div>

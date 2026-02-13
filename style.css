@@ -35,12 +35,28 @@
     -webkit-font-smoothing: antialiased;
 }
 
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--surface);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--primary-light);
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
     background-color: var(--background);
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 h1, h2, h3, h4, .brand-font {
@@ -563,25 +579,178 @@ footer {
     font-size: 0.875rem;
 }
 
-/* Mobile Responsive */
+/* Mobile Responsive Fixes & Premium Styles */
 @media (max-width: 1024px) {
     .hero-grid {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 4rem;
+    }
+    .hero-content h1 {
+        font-size: 3.5rem;
     }
     .hero-content p {
         margin: 0 auto 2.5rem;
     }
+    .hero-actions {
+        justify-content: center;
+    }
     .footer-grid {
         grid-template-columns: 1fr 1fr;
+    }
+    .main-image {
+        height: 400px;
+        transform: none !important;
     }
 }
 
 @media (max-width: 768px) {
+    nav {
+        height: 80px;
+    }
     .nav-links {
         display: none;
     }
-    .hero-content h1 {
-        font-size: 2.5rem;
+    .hide-mobile {
+        display: none !important;
     }
+    .menu-toggle {
+        display: flex !important;
+    }
+    .hero-content h1 {
+        font-size: 2.75rem;
+    }
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+    .floating-card.top {
+        right: -5%;
+    }
+    .floating-card.bottom {
+        left: -5%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2.25rem;
+    }
+    .stat-number {
+        font-size: 2.5rem !important;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        text-align: center;
+    }
+    .footer-about p {
+        margin: 1.5rem auto;
+    }
+}
+
+/* Menu Toggle Button */
+.menu-toggle {
+    display: none;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--secondary);
+    transition: var(--transition);
+}
+
+.menu-toggle:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu {
+    position: fixed;
+    top: 90px;
+    left: 1.5rem;
+    right: 1.5rem;
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    padding: 2rem;
+    display: none;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+    z-index: 999;
+    border: 1px solid var(--border);
+}
+
+.mobile-menu.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.mobile-nav-links a {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--secondary);
+}
+
+/* Premium Enhancements */
+.feature-card {
+    background: white;
+}
+
+.feature-icon {
+    background: var(--surface);
+}
+
+.course-price {
+    background: var(--grad-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Section Spacing */
+section {
+    padding: 100px 0;
+}
+
+.hero {
+    padding-top: 180px;
+}
+
+/* Custom Cursor or micro-interactions */
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn-primary:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+#header.scrolled {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
 }
