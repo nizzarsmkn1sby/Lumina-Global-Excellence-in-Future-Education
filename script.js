@@ -33,14 +33,8 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-// Add a little dynamic behavior to stats (counter increment effect)
-const stats = document.querySelectorAll(
-  '[data-aos="zoom-in"] .font-weight-800',
-); // Note: I should have added a class or used parent
-// Let's target by style since I didn't add specific classes
-const counterElements = document.querySelectorAll(
-  'div[style*="font-size: 3rem"]',
-);
+// Add dynamic behavior to stats (counter increment effect)
+const counterElements = document.querySelectorAll(".stat-number");
 
 const animateCounters = () => {
   counterElements.forEach((el) => {
